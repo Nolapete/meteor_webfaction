@@ -5,7 +5,7 @@ Thanks go out to Racing Tadpole for this post http://racingtadpole.com/blog/mete
 
 These instructions update the process with `meteor build <app>`.
 
-Install Mongodb app and note port
+### Install Mongodb app and note port
 (mongodb-linux-x86_64-rhel62-3.0.7 is the version I used per Webfaction support)
 
 Use your version for all commands where appropriate.
@@ -27,7 +27,7 @@ See mongodb documention, but basically it is
 
 `db.create({user: "user_name", pwd: "password, roles: [ { role: "roleName", db: "dbName" }]})`
 
-Install Node.js app using 0.10.xx (Meteor's base supported version) and note port
+### Install Node.js app using 0.10.xx (Meteor's base supported version) and note port
 
 Upgrade Node.js to Meteor currently supported version per instructions on Webfaction
 
@@ -43,7 +43,7 @@ open an SSH session to Webfaction then
 
 `(cd programs/server && npm install)`
 
-Edit the included start and stop files in this repo replacing the app_names, ports, user_name, password and your_app_url with your own.  This was the hardest part to get working, so enjoy!
+### Edit the included start and stop files in this repo replacing the app_names, ports, user_name, password and your_app_url with your own.  This was the hardest part to get working, so enjoy!
 
 Replace your `$HOME/webapps/meteor_app_name/bin` start and stop files with your edited versions.
 
@@ -55,4 +55,4 @@ From a new SSH session:
 
 `./bin/start`
 
-Test your site.
+### Test your site.
