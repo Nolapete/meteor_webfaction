@@ -1,0 +1,18 @@
+#!/bin/sh
+export MONGO_URL="mongodb://user_name:password@localhost:mongodb_app_port/db_name?autoReconnect=true" # 2
+export MAIL_URL="smtp://user_name:password@smtp.webfaction.com"
+export PORT="meteor_application_port"
+export ROOT_URL="http://your_app_url"
+mkdir -p /home/user_name/webapps/meteor_application_name/run
+pid=$(/sbin/pidof /home/user_name/webapps/meteor_application_name/bin/node)
+if echo "$pid" | grep -q " "; then
+  pid=""
+fi
+if [ -n "$pid" ]; then
+  user=$(ps -p $pid -o user | tail -n 1)
+  if [ $user = "user_name" ]; then
+    exit 0
+  fi
+fi
+nohup /home/user_name/webapps/meteor_application_name/bin/node /home/user_name/webapps/meteor_application_name/bundle/main.js > /dev/null 2>&1 &
+/sbin/pidof /home/user_name/webapps/meteor_application_name/bin/node > /home/user_name/webapps/meteor_application_name/run/node.pid

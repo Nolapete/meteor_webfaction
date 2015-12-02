@@ -1,0 +1,12 @@
+mkdir -p /home/username/webapps/meteor_application_name/run
+pid=$(/sbin/pidof /home/username/webapps/meteor_application_name/bin/node)
+if echo "$pid" | grep -q " "; then
+    pid=""
+fi
+if [ -n "$pid" ]; then
+  user=$(ps -p $pid -o user | tail -n 1)
+  if [ $user = "username" ]; then
+    kill "$pid"
+    rm -f /home/username/webapps/meteor_application_name/run/node.pid
+  fi
+fi
