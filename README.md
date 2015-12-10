@@ -39,7 +39,7 @@ open an SSH session to Webfaction then
 
 `tar -xzf meteor_application_name.tar.gz` that you uploaded
 
-`cd my_directory`
+`cd bundle`
 
 `(cd programs/server && npm install)`
 
