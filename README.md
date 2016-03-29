@@ -1,4 +1,6 @@
 # meteor_webfaction
+# Works with Meteor 1.3!
+
 ## Instructions for deploying Meteor site to Webfaction hosting
 
 Thanks go out to Racing Tadpole for this post http://racingtadpole.com/blog/meteor-mongodb-webfaction/ which helped me immensely in figuring out deploying on Webfaction.
